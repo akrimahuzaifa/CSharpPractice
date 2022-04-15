@@ -78,7 +78,7 @@ public class ArrayPractice : MonoBehaviour
 
     public void Question4()
     {
-        int[] array = new int[] { 1, 2, 2, 3, 0, 0, 4, 5, 6, 7, 8, 7, 9 };
+        int[] array = new int[] { 1, 2, 2, 3, 0, 0, 0, 4, 5, 6, 7, 8, 7, 9 };
         List<int> duplicateHolder = new List<int>();
         //int[] duplicateHolder = new int[100];
 
@@ -90,6 +90,7 @@ public class ArrayPractice : MonoBehaviour
                 {
                     if (array[x] == array[y])
                     {
+                        //for (int z = 0; z < duplicateHolder.Count; z++) ;
                         duplicateHolder.Add(array[x]);
                     }
                 }
@@ -101,6 +102,40 @@ public class ArrayPractice : MonoBehaviour
             Debug.Log(i);
         }
         
+    }
+
+    public void Question6()
+    {
+        int[] array = new int[] { 1, 2, 2, 1, 3, 0, 0, 3, 4, 5, 4, 6, 7, 8, 7, 8, 9 };
+        List<int> duplicateHolder = new List<int>();
+        List<int> uniqueHolder = new List<int>();
+
+        for (int x = 0; x < array.Length; x++)
+        {
+            for (int y = 0; y < array.Length; y++)
+            {
+                if (x != y)
+                {
+                    if (array[x] == array[y])
+                    {
+                        duplicateHolder.Add(array[x]);
+                    }
+                    else
+                    {
+                        uniqueHolder.Add(array[x]);
+                        //continue;
+                        
+                    }
+
+                }
+
+            }
+        }
+        foreach (int i in uniqueHolder)
+        {
+            Debug.Log(i);
+        }
+
     }
 
 }
