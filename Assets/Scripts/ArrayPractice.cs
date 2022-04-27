@@ -126,16 +126,69 @@ public class ArrayPractice : MonoBehaviour
                         //continue;
                         
                     }
-
                 }
-
             }
         }
         foreach (int i in uniqueHolder)
         {
             Debug.Log(i);
         }
-
     }
 
+    public void FindDistinct()
+    {
+        int[] array = new int[] { 1, 2, 2, 1, 3, 0, 0, 3, 4, 5, 4, 6, 7, 8, 7, 8, 9, 9, 9, 99 };
+        List<int> distinctHolder = new List<int>();
+
+        for (int x = 0; x <array.Length; x++)
+        {
+            for (int y = 0; y < array.Length; y++)
+            {
+                if(x != y)
+                {
+                    if(array[x] != array[y])
+                    {
+                        if (!distinctHolder.Contains(array[x]))
+                        {
+                            distinctHolder.Add(array[x]);
+                        }  
+                    }
+                }
+            }
+        }
+        foreach(int distinct in distinctHolder)
+        {
+            Debug.Log(distinct);
+        }
+    }
+
+    public void DaniyalFindDistinct()
+    {
+        int[] array = new int[] { 1, 2, 2, 1, 3, 0, 0, 3, 4, 5, 4, 6, 7, 8, 7, 8, 9, 9, 9, 99 };
+        //List<int> distinctHolder = new List<int>();
+        bool check;
+        int count = 0;
+
+        for (int x = 0; x < array.Length; x++)
+        {
+            check = false;
+            for (int y = 0; y < x; y++)
+            {
+                if (array[x] == array[y])
+                {
+                    check = true;
+                }
+            }
+            if (!check)
+            {
+                Debug.Log(array[x]);
+            }
+        }
+    }
+
+    public void IsHappyPrime()
+    {
+        int givenNumber = 5;
+        int startingNumber = 1;
+    }
 }
